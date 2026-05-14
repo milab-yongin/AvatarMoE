@@ -125,11 +125,11 @@ Novel view synthesis:
 python render.py mode=test dataset.test_mode=view dataset=zjumocap_377_mono
 ```
 
-Novel pose synthesis:
+<!-- Novel pose synthesis:
 
 ```bash
 python render.py mode=test dataset.test_mode=pose dataset=zjumocap_377_refine
-```
+``` -->
 
 OOD poses:
 
@@ -184,7 +184,6 @@ We thank the authors for releasing their code and datasets.
 
 # License
 
-## License
 
 This project is released under the MIT License.
 

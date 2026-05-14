@@ -1,13 +1,15 @@
 # Copyright (c) 2026 Hyeri Yang, Junyoung Hong, Shinwoong Kim, Kyungjae Lee
-# All rights reserved.
 #
-# This file is part of the AvatarMoE codebase, released under the
-# Gaussian-Splatting License (non-commercial research use only).
+# This file is part of the AvatarMoE codebase.
 #
-# Adapted from 3DGS-Avatar (https://github.com/mikeqzy/3dgs-avatar-release),
-# CVPR 2024, MIT License.
-# Modifications: Added GMMNonRigidField and JointGaussian classes implementing
-# the part-based Mixture of Experts deformation framework.
+# Adapted from 3DGS-Avatar:
+# https://github.com/mikeqzy/3dgs-avatar-release
+# (CVPR 2024, MIT License)
+#
+# Modifications include:
+# - GMM-based non-rigid deformation field
+# - Part-aware Mixture-of-Experts architecture
+# - JointGaussian representation
 
 import numpy as np
 

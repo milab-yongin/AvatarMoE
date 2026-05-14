@@ -1,0 +1,4 @@
+# ninja log v5
+1	9543	1742256668189296611	/home/molly/workspace/3D/3dgs-avatar-release/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/simple_knn.o	cda6e3e01cefb394
+0	24322	1742256682945267246	/home/molly/workspace/3D/3dgs-avatar-release/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/ext.o	609cbf16d6603
+1	41413	1742256700057233472	/home/molly/workspace/3D/3dgs-avatar-release/submodules/simple-knn/build/temp.linux-x86_64-cpython-38/spatial.o	4485c335f1d3b20

@@ -1,0 +1,28 @@
+# Experiment outputs (release separately)
+exp/
+wandb/
+*.pth
+*.ckpt
+*.log
+
+# Body models (license restricted)
+body_models/smpl/*/model.pkl
+body_models/misc/
+
+# Novel poses (download from 3DGS-Avatar / GART)
+novel_poses/*.npy
+novel_poses/*.npz
+
+# External tools (clone separately)
+tools/arah-release/
+tools/smplx/
+
+# Python
+__pycache__/
+*.pyc
+*.so
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/

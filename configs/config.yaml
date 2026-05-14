@@ -1,0 +1,115 @@
+defaults:
+  - _self_
+  - dataset: zjumocap_393_mono
+  - pose_correction: direct
+  - texture: shallow_mlp
+  - rigid: skinning_field
+  - non_rigid: gmm_field
+  - option:
+      - iter8k
+
+hydra:
+  run:
+    dir: exp/${name}
+  job:
+    chdir: false
+
+name: ${dataset_name}-${tag}
+
+tag: best
+
+model:
+  gaussian:
+    use_sh: true
+    sh_degree: 3
+    delay: 1000
+  pose_correction:
+    name: direct
+  deformer:
+    rigid:
+      name: identity
+    non_rigid:
+      name: identity
+
+dataset:
+  preload: true
+  train_smpl: false
+
+  mode: ${mode}
+  test_mode: view
+  predict_seq: 0
+  freeview: false
+
+  resolution: -1
+  padding: 0.1
+  white_background: true
+  data_device: cuda
+  eval: false
+
+opt:
+  iterations: 60000
+  grad_clip: 0.1
+
+  # learning rates
+  position_lr_init: 0.00016
+  position_lr_final: 0.0000016
+  position_lr_delay_mult: 0.01
+  position_lr_max_steps: 30000
+  feature_lr: 0.0025
+  opacity_lr: 0.05
+  scaling_lr: 0.005
+  rotation_lr: 0.001
+
+  pose_correction_lr: 1e-4
+  rigid_lr: 1e-4
+  non_rigid_lr: 1e-3
+  lr_ratio: 0.01
+
+  lambda_l1: 1.0
+  lambda_dssim: 0.0
+  lambda_perceptual: 0.02
+  mask_loss_type: l1
+  lambda_mask: 0.1
+  lambda_opacity: 0.
+  lambda_skinning: [10,1000,0.1]
+  lambda_pose: 0.
+
+  lambda_boundary: 0.0
+  lambda_coherence: 0.2
+  lambda_balance: 0.0
+  lambda_gating: 0.0
+
+  # densification configs
+  percent_dense: 0.01
+  densification_interval: 100
+  opacity_reset_interval: 3000
+  densify_from_iter: 500
+  densify_until_iter: 45000
+  densify_grad_threshold: 0.0002
+  opacity_threshold: 0.05
+
+pipeline:
+  convert_SHs_python: true
+  compute_cov3D_python: true
+  debug: false
+
+  pose_noise: 0.1
+
+debug_from: -1
+detect_anomaly: false
+test_iterations: []
+test_interval: 2000
+save_iterations: [30000]
+# seed: -1
+seed: 0
+checkpoint_iterations: []
+start_checkpoint: null
+wandb_disable: true
+
+mode: train
+load_ckpt: null
+evaluate: true
+clean: true
+visualize_gating: true
+visualize_color: true
+white_background: true

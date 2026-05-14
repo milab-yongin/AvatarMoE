@@ -1,0 +1,49 @@
+# @package _global_
+
+non_rigid_name: gmm_field
+
+model:
+  deformer:
+    non_rigid:
+      name: gmm_field
+
+      delay: 1500
+      k: 24
+      use_positional_encoder: false
+      use_hashgrid: true
+
+      use_vanillamlp: true 
+      use_betas: true
+
+      # ablation flag
+      use_smpl_weights_for_gating: false
+
+      feature_dim: ${model.texture.non_rigid_dim}
+      latent_dim: 0
+      pose_encoder:
+        num_joints: 24
+        rel_joints: false
+        dim_per_joint: 32
+        global_dim: 64
+        out_dim: -1
+      
+      hashgrid:
+        n_levels: 16
+        n_features_per_level: 2
+        log2_hashmap_size: 19
+        base_resolution: 16
+        per_level_scale: 1.447269237440378 # max reso 4096
+        max_resolution: 2048
+
+      vanilla_mlp:
+        n_neurons: 128
+        n_hidden_layers: 2
+        skip_in: [ ]
+        cond_in: [ 0 ]
+        multires: 0
+        
+      boundary_threshold: 0.1
+
+opt:
+  non_rigid_lr: 1e-3
+  nr_latent_lr: 1e-3

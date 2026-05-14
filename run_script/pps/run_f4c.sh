@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=1 python train.py dataset=ps_female_4 option=iter15k pose_correction=none

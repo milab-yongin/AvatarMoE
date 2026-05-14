@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python train.py dataset=zjumocap_377_mono

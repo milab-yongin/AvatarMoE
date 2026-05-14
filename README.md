@@ -172,11 +172,12 @@ We thank the authors for releasing their code and datasets.
 
 ```bibtex
 @article{yang2026avatarmoe,
-  title   = {AvatarMoE: Decomposing non-rigid deformation with part-aware experts for 3DGS avatars},
-  author  = {Yang, Hyeri and Hong, Junyoung and Kim, Shinwoong and Lee, Kyungjae},
-  journal = {Computers \& Graphics},
-  year    = {2026},
-  doi     = {10.1016/j.cag.2026.104597}
+  title={AvatarMoE: Decomposing non-rigid deformation with part-aware experts for 3DGS avatars},
+  author={Yang, Hyeri and Hong, Junyoung and Kim, Shinwoong and Lee, Kyungjae},
+  journal={Computers \& Graphics},
+  pages={104597},
+  year={2026},
+  publisher={Elsevier}
 }
 ```
 

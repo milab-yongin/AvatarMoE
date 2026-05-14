@@ -6,7 +6,7 @@
 *Computers & Graphics, 2026*
 
 <p align="center">
-  <img src="assets/teaser.gif" width="100%">
+  <img src="assets/model_overview.JPG" width="100%">
 </p>
 
 AvatarMoE is a part-aware Mixture-of-Experts framework for animatable 3D Gaussian Splatting avatars.  
@@ -184,6 +184,12 @@ We thank the authors for releasing their code and datasets.
 
 # License
 
-This project follows the non-commercial research license inherited from Gaussian Splatting (Inria).
+## License
+
+This project is released under the MIT License.
+
+Some third-party dependencies and submodules may be subject to
+their own respective licenses. Please refer to the corresponding
+repositories for details.
 
 See `LICENSE` for details.

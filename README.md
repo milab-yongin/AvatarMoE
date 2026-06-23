@@ -1,6 +1,6 @@
 # AvatarMoE: Decomposing Non-Rigid Deformation with Part-Aware Experts for 3DGS Avatars
 
-### [Paper](https://doi.org/10.1016/j.cag.2026.104597) | [Project Page](TODO)
+### [Paper](https://doi.org/10.1016/j.cag.2026.104597) | [Project Page](https://codinghye.github.io/AvatarMoE/)
 
 **Hyeri Yang, Junyoung Hong, Shinwoong Kim, Kyungjae Lee**  
 *Computers & Graphics, 2026*

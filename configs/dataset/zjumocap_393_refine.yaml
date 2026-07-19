@@ -30,6 +30,6 @@ dataset:
 
   lanczos: false
   resolution: -1
-  white_background: true
+  white_background: false
   data_device: cuda
   eval: false

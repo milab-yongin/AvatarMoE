@@ -110,6 +110,6 @@ mode: train
 load_ckpt: null
 evaluate: true
 clean: true
-visualize_gating: true
-visualize_color: true
-white_background: true
+visualize_gating: false
+gating_frames: [7, 8, 9, 10]
+white_background: false

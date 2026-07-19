@@ -113,19 +113,18 @@ def test(config):
         vis_path = os.path.join(config.exp_dir, config.suffix, 'visualizations', ckpt_name)
         os.makedirs(vis_path, exist_ok=True)
 
-        # Choose the frame to visualize
-        target_frames = [7,8,9,10] 
-        
-        print(f"\n[Visualization] Extracting gating weights for frames: {target_frames}")
-        for frame_idx in target_frames:
+        # Gating weight visualization
+        if config.get('visualize_gating', False):
+            # Choose the frame to visualize
+            target_frames = config.get('gating_frames', [7, 8, 9, 10])
 
-            canonical_ply_path = os.path.join(vis_path, f"canonical_gating_frame_{frame_idx}.ply")
-            visualize_canonical_gating_map(scene, config, frame_idx, canonical_ply_path)
+            print(f"\n[Visualization] Extracting gating weights for frames: {target_frames}")
+            for frame_idx in target_frames:
+                canonical_ply_path = os.path.join(vis_path, f"canonical_gating_frame_{frame_idx}.ply")
+                visualize_canonical_gating_map(scene, config, frame_idx, canonical_ply_path)
 
-            obs_ply_path = os.path.join(vis_path, f"obs_gating_frame_{frame_idx}.ply")
-            visualize_gating_weights(scene, config, frame_idx, obs_ply_path)
-
-
+                obs_ply_path = os.path.join(vis_path, f"obs_gating_frame_{frame_idx}.ply")
+                visualize_gating_weights(scene, config, frame_idx, obs_ply_path)
 
         evaluate_current_model(
             scene=scene,

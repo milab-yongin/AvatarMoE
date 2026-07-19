@@ -1,6 +1,6 @@
 # AvatarMoE: Decomposing Non-Rigid Deformation with Part-Aware Experts for 3DGS Avatars
 
-### [Paper](https://doi.org/10.1016/j.cag.2026.104597) | [Project Page](https://codinghye.github.io/AvatarMoE/)
+### [Paper](https://doi.org/10.1016/j.cag.2026.104597) | [Project Page](https://codinghye.github.io/AvatarMoE/) | [🤗 Checkpoints](https://huggingface.co/CODINGHYE/AvatarMoE)
 
 **Hyeri Yang, Junyoung Hong, Shinwoong Kim, Kyungjae Lee**  
 *Computers & Graphics, 2026*
@@ -88,6 +88,38 @@ Extract auxiliary parameters:
 
 ```bash
 python extract_smpl_parameters.py
+```
+
+---
+
+# Pretrained Checkpoints
+
+Pretrained checkpoints for all subjects are hosted on Hugging Face:
+
+**https://huggingface.co/CODINGHYE/AvatarMoE**
+
+Each subject is stored as `checkpoints/<subject>-best/`, containing the checkpoint
+(`ckpt<iters>.pth`) and its resolved Hydra config (`.hydra/`).
+
+Download a single subject and place it under `exp/`:
+
+```python
+from huggingface_hub import snapshot_download
+
+snapshot_download(
+    repo_id="CODINGHYE/AvatarMoE",
+    allow_patterns="checkpoints/ps_female_3-best/*",
+    local_dir="hf_ckpts",
+)
+# then move hf_ckpts/checkpoints/ps_female_3-best -> exp/ps_female_3-best
+```
+
+Or download all checkpoints at once via the CLI:
+
+```bash
+pip install -U huggingface_hub
+hf download CODINGHYE/AvatarMoE --local-dir hf_ckpts
+# subject folders will be under hf_ckpts/checkpoints/; move them into exp/
 ```
 
 ---
